@@ -38,7 +38,7 @@ class CKomisi {
             marketing: marketing.name,
             bulan: month,
             omzet: totalSales,
-            commissionPercentage: commissionRate * 100,
+            commissionPercentage: (commissionRate * 100)?.toLocaleString(),
             commissionNominal: commissionAmount
           };
         });

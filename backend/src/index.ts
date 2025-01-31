@@ -5,10 +5,12 @@ import { komisi } from "./routes/komisi";
 import { pembayaran } from "./routes/pembayaran";
 import { penjualan } from "./routes/penjualan";
 
+const PORT = process.env.PORT || 3001;
+
 const app = new Elysia()
   .use(
     cors({
-      origin: ["http://localhost:3000", "http://localhost:3001"],
+      origin: ["http://localhost:3000"],
     })
   )
   .use(
@@ -24,7 +26,7 @@ const app = new Elysia()
   .use(penjualan)
   .use(komisi)
   .use(pembayaran)
-  .listen(3000);
+  .listen(PORT);
 
 console.log(
   `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
