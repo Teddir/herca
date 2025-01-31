@@ -13,7 +13,8 @@
 ![alt text](https://raw.githubusercontent.com/Teddir/herca/refs/heads/main/public/add_pembayaran.png)
 
 ## Postman collection
-[Download Postman Collection JSON](https://raw.githubusercontent.com/Teddir/herca/refs/heads/main/public/postman_collection.json)
+[Download Postman Collection JSON](https://raw.githubusercontent.com/Teddir/herca/refs/heads/main/public/postman_collection.json) -
+API terdokumentasi di Swagger, bisa diakses melalui: BASE_BE_URL/swagger
 
 # Panduan Instalasi dan Penggunaan
 
