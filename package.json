@@ -1,15 +1,18 @@
 {
   "name": "herca",
-  "version": "1.0.50",
+  "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
-  },
-  "dependencies": {
-    "elysia": "latest"
-  },
-  "devDependencies": {
-    "bun-types": "latest"
-  },
-  "module": "src/index.js"
+    "build:frontend": "cd frontend && bun clear",
+    "build:backend": "cd backend && ./server.bash",
+    "start:frontend": "cd frontend && bun dev",
+    "start:backend": "cd backend && bun dev",
+    "start:frontend:prod": "cd frontend && bun start",
+    "start:backend:prod": "cd backend && bun prod",
+    "install:frontend": "cd frontend && bun install",
+    "install:backend": "cd backend && bun install",
+    "install-pkg": "bun run install:frontend & bun run install:backend",
+    "start:dev": "bun run start:frontend & bun run start:backend",
+    "start:prod": "bun run start:frontend:prod & bun run start:backend:prod",
+    "build:gentel": "bun run build:frontend && bun run build:backend"
+  }
 }
