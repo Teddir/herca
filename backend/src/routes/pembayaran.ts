@@ -41,13 +41,13 @@ class CPembayaran {
 
       const remaining_balance = sale.grand_total - total_payment;
 
-      // Tentukan status berdasarkan sisa saldo
+      
       let status: "pending" | "paid" | "overdue" = "pending";
       if (remaining_balance <= 0) {
-        status = "paid"; // Jika sisa saldo sudah 0 atau kurang, statusnya 'paid'
+        status = "paid"; 
       }
 
-      // Simulasi pembayaran (misalnya pembayaran pertama kali)
+      
       const payment: Pembayaran = {
         id: paymentsData.length + 1,
         sale_id: sale_id,
@@ -72,8 +72,6 @@ class CPembayaran {
 
   async getStatusPembayara(sale_id: string) {
     try {
-      console.log(sale_id);
-
       const paymentStatus = paymentsData.filter(
         (payment) => payment.sale_id === parseInt(sale_id)
       );

@@ -1,5 +1,4 @@
 import Elysia from "elysia";
-import { Marketing } from "../models/marketing";
 import { Penjualan } from "../models/penjualan";
 
 const salesData: Penjualan[] = require("../data/example.penjualan.json");

@@ -17,10 +17,8 @@ class CKomisi {
   async get() {
     try {
       const data = marketingData.map(marketing => {
-        // Filter penjualan yang sesuai dengan marketing
         const salesForMarketing = salesData.filter(sale => sale.marketing_Id === marketing.id);
         
-        // Kelompokkan penjualan berdasarkan bulan
         const monthlySales = salesForMarketing.reduce((acc, sale) => {
           const month = new Date(sale.date).toLocaleString('default', { month: 'long', year: 'numeric' });
           if (!acc[month]) acc[month] = 0;
@@ -28,7 +26,6 @@ class CKomisi {
           return acc;
         }, {} as Record<string, number>);
   
-        // Membuat array hasil komisi per bulan untuk setiap marketing
         const result = Object.keys(monthlySales).map(month => {
           const totalSales = monthlySales[month];
           const commissionRate = calculateCommission(totalSales);

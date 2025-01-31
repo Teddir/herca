@@ -17,7 +17,7 @@ const app = new Elysia()
     swagger({
       documentation: {
         info: {
-          title: "API Herca",
+          title: "API Herca Group",
           version: "0.0.1-rc",
         },
       },
