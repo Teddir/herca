@@ -13,6 +13,6 @@
     "install-pkg": "bun run install:frontend & bun run install:backend",
     "start:dev": "bun run start:frontend & bun run start:backend",
     "start:prod": "bun run start:frontend:prod & bun run start:backend:prod",
-    "build:gentel": "bun run build:frontend && bun run build:backend"
+    "build": "bun run build:frontend && bun run build:backend"
   }
 }
