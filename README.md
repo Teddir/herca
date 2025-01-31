@@ -3,6 +3,8 @@
 ## API untuk menampilkan komisi dari setiap marketing.
 ![alt text](https://raw.githubusercontent.com/Teddir/herca/refs/heads/main/public/komisi.png)
 ![alt text](https://raw.githubusercontent.com/Teddir/herca/refs/heads/main/public/view_client_komisi.png)
+![alt text](https://raw.githubusercontent.com/Teddir/herca/refs/heads/main/public/view_client_komisi_tablet.png)
+![alt text](https://raw.githubusercontent.com/Teddir/herca/refs/heads/main/public/view_client_komisi_phone.png)
 
 ## Table pembayaran, dimana fungsinya adalah untuk melakukan pembayaran secara kredit.
 ![alt text](https://raw.githubusercontent.com/Teddir/herca/refs/heads/main/public/table_pembayaran.png)
