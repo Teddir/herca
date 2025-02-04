@@ -21,6 +21,17 @@ const salesData: Penjualan[] = require("../data/example.penjualan.json");
 const paymentsData: Pembayaran[] = [];
 
 class CPembayaran {
+  async get() {
+    try {
+      return {
+        success: true,
+        data: paymentsData,
+      };
+    } catch (error) {
+      return JSON.stringify(error, null, 2);
+    }
+  }
+
   async add({
     sale_id,
     total_payment,
@@ -39,22 +50,21 @@ class CPembayaran {
         return { status: "error", message: "Sale not found" };
       }
 
-      const remaining_balance = sale.grand_total - total_payment;
-
+      const remaining_balance = sale.grand_total - installment_amount;
       
       let status: "pending" | "paid" | "overdue" = "pending";
       if (remaining_balance <= 0) {
-        status = "paid"; 
+        status = "paid";
       }
 
-      
+
       const payment: Pembayaran = {
         id: paymentsData.length + 1,
         sale_id: sale_id,
         payment_date: new Date().toISOString(),
-        total_payment: total_payment,
-        remaining_balance: remaining_balance,
-        installment_amount: installment_amount,
+        total_payment,
+        remaining_balance,
+        installment_amount,
         due_date: due_date,
         status: status,
       };
@@ -63,7 +73,7 @@ class CPembayaran {
 
       return {
         success: true,
-        datas:paymentsData,
+        data: paymentsData,
       };
     } catch (error) {
       return JSON.stringify(error, null, 2);
@@ -90,7 +100,7 @@ class CPembayaran {
 export const pembayaran = new Elysia()
   .decorate("cpembayaran", new CPembayaran())
   .group("pembayaran", (app) =>
-    app
+    app.get("", ({ cpembayaran }) => cpembayaran.get())
       .model({
         params: t.Object({
           sale_id: t.String(),

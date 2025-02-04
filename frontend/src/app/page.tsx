@@ -1,4 +1,5 @@
 "use client";
+import { PembayaranForm } from "@/components/atoms/pembayaran-form";
 import { TableSkeleton } from "@/components/organism/skeleton";
 import ListKomisi from "@/components/table";
 import { getKomisi } from "@/lib/my-api";

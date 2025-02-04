@@ -8,7 +8,7 @@ class CPenjualan {
     try {
       return {
         success: true,
-        datas: salesData,
+        data: salesData,
       };
     } catch (error) {
       return JSON.stringify(error, null, 2);

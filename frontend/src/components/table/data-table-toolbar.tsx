@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 
 import { DataTableFacetedFilter } from "./data-table-faceted-filter";
 import { CircleXIcon, CirclePercentIcon } from "lucide-react";
+import { PembayaranForm } from "../atoms/pembayaran-form";
 
 interface DataTableToolbarProps<TData> {
   table: Table<TData>;
@@ -42,7 +43,7 @@ export function DataTableToolbar<TData>({
   const isFiltered = table.getState().columnFilters.length > 0;
 
   return (
-    <div className="flex items-center justify-between w-full">
+    <div className="flex md:flex-row flex-col md:items-center justify-between w-full gap-4">
       <div className="flex flex-1 md:flex-row flex-col md:items-center gap-2">
         <Input
           placeholder="Filter komisi by marketing..."
@@ -70,7 +71,7 @@ export function DataTableToolbar<TData>({
           </Button>
         )}
       </div>
-      {/* <DataTableViewOptions table={table} /> */}
+      <PembayaranForm />
     </div>
   );
 }
