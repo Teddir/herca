@@ -50,7 +50,8 @@ class CPembayaran {
         return { status: "error", message: "Sale not found" };
       }
 
-      const remaining_balance = sale.grand_total - installment_amount;
+      let remaining_balance = sale.grand_total - installment_amount;
+      remaining_balance = remaining_balance <= 0 ? 0 : remaining_balance
       
       let status: "pending" | "paid" | "overdue" = "pending";
       if (remaining_balance <= 0) {
