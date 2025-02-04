@@ -2,7 +2,7 @@
   "name": "herca",
   "version": "1.0.0",
   "scripts": {
-    "build:frontend": "cd frontend && bun clear",
+    "build:frontend": "cd frontend && bun run build",
     "build:backend": "cd backend && ./server.bash",
     "start:frontend": "cd frontend && bun dev",
     "start:backend": "cd backend && bun dev",
