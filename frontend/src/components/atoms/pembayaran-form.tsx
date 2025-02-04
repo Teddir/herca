@@ -41,7 +41,6 @@ export function PembayaranForm() {
     resolver: zodResolver(FormSchema),
   })
 
-
   const {
     data: dataPenjualan,
     isLoading,
@@ -81,11 +80,11 @@ export function PembayaranForm() {
       form.resetField("sale_id")
       form.resetField("total_payment")
 
+      setOpenSheet(false)
       toast({
         title: "Success",
         description: "Berhasil melakukan pembayaran",
       })
-      setOpenSheet(false)
     } catch (error) {
       toast({
         title: "Error",
@@ -129,9 +128,8 @@ export function PembayaranForm() {
                           const targetDate = parseISO(isDueDate);
                           const dateDifference = !isDueDate ? "" : formatDistanceToNow(targetDate, { addSuffix: true, locale: id });
 
-
                           const isPaid = isP?.some(aa => aa.status == 'paid')
-                          const isInstallment_amount = isP?.filter(a => a.status == 'pending')?.reduce((aa, bb) => aa + bb.total_payment, 0)
+                          const isInstallment_amount = isP?.filter(aa => aa.status == 'pending')?.reduce((aa, bb) => aa + bb.total_payment, 0)
 
                           let isTotal = a.grand_total - isInstallment_amount
                           isTotal = isTotal <= 0 ? 0 : isTotal
@@ -168,7 +166,6 @@ export function PembayaranForm() {
         </div>
         <SheetFooter>
           <Button onClick={() => {
-
             const elementBtn = document.getElementById(
               `btn-submit`
             ) as HTMLTextAreaElement;
